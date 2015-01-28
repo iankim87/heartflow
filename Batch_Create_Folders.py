@@ -1,18 +1,27 @@
 import os, csv
 
-destination_dir = r"R:\For_Ian\v2.0_Workstation\Lumen_Variability\v2.0\v1.4_OQ"
+#source_dir = r"R:\For_Ian\OQ2_Final"
+def compute(destination_dir):
 
-# Go to active directory
-os.chdir(destination_dir)
+    #filename = "FFRData.txt"
+    #filename = input("Enter the name of the file you would like to copy")
 
-data = csv.reader(open("list.csv","rb"), delimiter=",")
+    # Go to active directory
+    os.chdir(destination_dir)
 
-for row in data:
-    print row
-    value1 = row[0]
-    print value1
+    data = csv.reader(open("list.csv","rb"), delimiter=",")
 
-    if os.path.exists(os.path.join(destination_dir, value1)):
-        continue
+    for row in data:
+        print row
+        value1 = row[0]
+        print value1
+        #value2 = row[1]
+        #print value2
 
-    os.mkdir(os.path.join(destination_dir, value1))
+        if os.path.exists(os.path.join(destination_dir, value1)):
+            continue
+
+        os.mkdir(os.path.join(destination_dir, value1))
+
+if __name__ == '__main__':
+    compute(r"R:\For_Ian\v2.0_Workstation\FFRct_Extraction\v1.4_OQ\test")
