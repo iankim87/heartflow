@@ -1,4 +1,5 @@
 import os, csv
+import sys
 
 #source_dir = r"R:\For_Ian\OQ2_Final"
 def compute(destination_dir):
@@ -24,4 +25,5 @@ def compute(destination_dir):
         os.mkdir(os.path.join(destination_dir, value1))
 
 if __name__ == '__main__':
-    compute(r"R:\For_Ian\v2.0_Workstation\FFRct_Extraction\v1.4_OQ\test")
+    #r"R:\For_Ian\v2.0_Workstation\FFRct_Extraction\v1.4_OQ\test"
+    compute(sys.argv[1])
